@@ -1,0 +1,44 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EventMakerTest.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ViewModel="using:EventMakerTest.ViewModel"
+    x:Class="EventMakerTest.View.EventPage"
+    mc:Ignorable="d">
+    <Page.DataContext>
+        <ViewModel:EventViewModel/>
+    </Page.DataContext>
+
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ListView x:Name="listView" HorizontalAlignment="Left" Width="401" Margin="0,0,0,239" FontSize="30" ItemsSource="{Binding Instance.UpcommingEvents}" IsSynchronizedWithCurrentItem="False">
+            <ListView.DataContext>
+                <ViewModel:EventViewModel/>
+            </ListView.DataContext>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border Name="border" BorderBrush="Azure" BorderThickness="10">
+                        <StackPanel>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="Band: "/>
+                                <TextBlock Grid.Row="0" Grid.Column="1" Text=""/>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </Grid>
+</Page>
