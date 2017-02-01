@@ -27,6 +27,8 @@ namespace EventMakerTest.ViewModel
             Instance = EventCatalogSingleton.Instance;
 
             CreateEventCommand = new Common.RelayCommand(AddNewEvent);
+            LoadList = new Common.RelayCommand();
+            SaveList = new Common.RelayCommand(Persistency.PersistencyService.SaveEventsAsJsonAsync);
            
         }
 
@@ -36,6 +38,8 @@ namespace EventMakerTest.ViewModel
         }
 
         public ICommand CreateEventCommand { get; set; }
+        public ICommand LoadList { get; set; }
+        public ICommand SaveList { get; set; }
 
     }
 }

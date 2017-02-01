@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using EventMakerTest.Model;
 using System.Collections.ObjectModel;
+using Newtonsoft.Json;
 
 namespace EventMakerTest.Model
 {
@@ -24,6 +25,21 @@ namespace EventMakerTest.Model
         public void AddEvent()
         {
             UpcommingEvents.Add(new Event());
+        }
+
+        public string GetJson()
+        {
+            string json = JsonConvert.SerializeObject(this);
+            return json;
+        }
+        public void IndsætJson(string jsonText)
+        {
+            List<Event> UpcomingEvents = JsonConvert.DeserializeObject<List<Event>>(jsonText);
+
+            foreach (var eventss in UpcomingEvents)
+            {
+                this.UpcommingEvents.Add(eventss);
+            }
         }
     }
 }
