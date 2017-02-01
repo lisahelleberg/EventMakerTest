@@ -24,7 +24,7 @@
         <TextBox x:Name="DescriptionText" HorizontalAlignment="Left" Margin="312,124,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" DataContext="{Binding Description}"/>
         <TimePicker HorizontalAlignment="Left" Margin="69,463,0,0" VerticalAlignment="Top" DataContext="{Binding Time}"/>
         <DatePicker HorizontalAlignment="Left" Margin="54,550,0,0" VerticalAlignment="Top" DataContext="{Binding Date}"/>
-        <AppBarButton x:Name="appBarButton" Icon="Accept" Label="appbarbutton" Margin="422,0,0,124" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="191" RenderTransformOrigin="-0.226,-0.352"/>
+        <AppBarButton x:Name="appBarButton" Icon="Accept" Label="appbarbutton" Margin="422,0,0,124" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="191" RenderTransformOrigin="-0.226,-0.352" Command="{Binding CreateEventCommand}"/>
 
 
 
